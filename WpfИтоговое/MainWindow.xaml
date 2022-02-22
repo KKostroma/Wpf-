@@ -11,47 +11,51 @@
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Background" Value="#FF72DCDC"/>
-            <Setter Property="BorderBrush" Value="White"/>
-            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="BorderBrush" Value="#FFEEE2CF"/>
+            <Setter Property="BorderThickness" Value="7"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontSize" Value="20"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="BorderThickness" Value="11"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
     </Window.Resources>
     <Grid Background="#FFB3B3EE">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="100"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <GroupBox Grid.Row="0" Header="Display" Margin="10,5,10,0" Padding="5" BorderThickness="2" BorderBrush="White" Background="#FF72DCDC">
             <Grid x:Name="grid" Margin="70,0,0,0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="60"/>
                 </Grid.RowDefinitions>
-                <TextBox Grid.Row="0" Margin="5">
-                </TextBox>
-                <TextBox Grid.Row="1" Margin="5">
+                <TextBox x:Name="result" Grid.Row="0" Margin="5" Height="50" FontSize="20">
                 </TextBox>
             </Grid>
         </GroupBox>
         <GroupBox Header="Calcum" Grid.Row="1" Margin="10" Padding="5" BorderThickness="2" BorderBrush="White">
             <Grid>
                 <UniformGrid Grid.Row="2" Columns="4" Rows="4">
-                    <Button Content="1"/>
-                    <Button Content="2"/>
-                    <Button Content="3"/>
-                    <Button Content="+" Background="#FFFFE0BB" BorderBrush="White" />
-                    <Button Content="4"/>
-                    <Button Content="5"/>
-                    <Button Content="6"/>
-                    <Button Content="-" Background="#FFFFE0BB" BorderBrush="White"/>
-                    <Button Content="7"/>
-                    <Button Content="8"/>
-                    <Button Content="9"/>
-                    <Button Content="*" Background="#FFFFE0BB" BorderBrush="White"/>
-                    <Button Content="0"/>
-                    <Button Content=","/>
-                    <Button Content="="/>
-                    <Button Content="/" Background="#FFFFE0BB" BorderBrush="White"/>
+                    <Button Content="1" Click="Button_Click_Numbers"/>
+                    <Button Content="2" Click="Button_Click_Numbers"/>
+                    <Button Content="3" Click="Button_Click_Numbers"/>
+                    <Button Content="+" Background="#FFFFE0BB" BorderBrush="White" Click="Button_Click_Addition" />
+                    <Button Content="4" Click="Button_Click_Numbers"/>
+                    <Button Content="5" Click="Button_Click_Numbers"/>
+                    <Button Content="6" Click="Button_Click_Numbers"/>
+                    <Button Content="-" Background="#FFFFE0BB" BorderBrush="White" Click="Button_Click_Subtraction"/>
+                    <Button Content="7" Click="Button_Click_Numbers"/>
+                    <Button Content="8" Click="Button_Click_Numbers"/>
+                    <Button Content="9" Click="Button_Click_Numbers"/>
+                    <Button Content="*" Background="#FFFFE0BB" BorderBrush="White" Click="Button_Click_Multiplication"/>
+                    <Button Content="СЕ" Click="Button_Click_Clear"/>
+                    <Button Content="0" Click="Button_Click_Numbers"/>
+                    <Button Content="=" Click="Button_Click_Result"/>
+                    <Button Content="/" Background="#FFFFE0BB" BorderBrush="White" Click="Button_Click_Division"/>
                 </UniformGrid>
             </Grid>
         </GroupBox>
